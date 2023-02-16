@@ -3,7 +3,7 @@ import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 
 import { RegisterPage } from '../pages/RegisterPage';
-import { Layout } from './Loyout';
+import { Layout } from './Layout';
 import { ContactsPage } from '../pages/ContactsPage';
 
 export const App = () => {
