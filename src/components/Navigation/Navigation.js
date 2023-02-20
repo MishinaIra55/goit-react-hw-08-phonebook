@@ -1,5 +1,6 @@
-import { css } from '@emotion/react';
+import css from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -11,7 +12,7 @@ export const Navigation = () => {
       </NavLink>
       {isLoggedIn && (
         <NavLink className={css.link} to="/tasks">
-          Tasks
+         Contacts
         </NavLink>
       )}
     </nav>

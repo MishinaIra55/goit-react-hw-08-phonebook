@@ -9,5 +9,5 @@ export const RegisterPage =() => {
       </Helmet>
       <RegisterForm />
     </div>
-  )
+  );
 }

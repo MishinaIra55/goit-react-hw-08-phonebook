@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { css } from '@emotion/react';
+import css from './AuthNav.module.css';
 
 export const AuthNav = () => {
   return (
