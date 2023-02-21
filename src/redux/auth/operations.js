@@ -40,7 +40,7 @@ export const logIn = createAsyncThunk(
   }
 );
 
-
+//отправляем запрос и прикладываю token
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
