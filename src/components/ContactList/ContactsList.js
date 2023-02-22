@@ -1,38 +1,33 @@
-
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { selectAllContacts, selectFilter } from '../../redux/contacts/selectors';
-
-import styles from './ContactsList.module.css';
-import { deleteContact } from '../../redux/contacts/operations';
+import { ContactItem } from '../ContactItem/ContactItem';
 
 
 
-export const ContactsList = () => {
+export const ContactList = () => {
   const contacts = useSelector(selectAllContacts);
   const filter = useSelector(selectFilter);
-  const dispatch = useDispatch();
-
-  const filteredContacts = contacts.filter(contact => {
 
 
-    return contact.name.toLowerCase().includes(filter.toLowerCase());
+  const getFilteredList = () => {
 
-  });
+    if (filter === '') {
+
+      return contacts;
+
+    } else {
+      const normalizeFilter = filter.toLowerCase();
+      // console.log(contacts)
+      return contacts.filter(item => item.name.toLowerCase().includes(normalizeFilter));
+    }
+  };
 
   return (
-    <ul className={styles.list}>
-      {filteredContacts.map(({ id, name, number }) => (
-        <li key={id} className={styles.item}>
-          <p>{name}</p>
-          <p>{number}</p>
-          <button
-            className={styles.btn}
-            type="submit"
-            onClick={() => dispatch(deleteContact(id))}
-          >
-            Delete
-          </button>
-        </li>
+
+    <ul>
+      {getFilteredList() && getFilteredList().map(item => (
+
+        <ContactItem key={item.id} contact={item} />
       ))}
     </ul>
   );

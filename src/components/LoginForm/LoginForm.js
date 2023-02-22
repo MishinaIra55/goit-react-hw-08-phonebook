@@ -1,6 +1,7 @@
 import css  from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
+import { Container, TextField } from '@mui/material';
 
 export const LoginForm = () => {
 const dispatch = useDispatch();
@@ -20,16 +21,18 @@ const dispatch = useDispatch();
   };
 
   return (
+    <Container sx={{mt: '3rem'}}>
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
-        Email
-        <input type="email" name="email" />
+
+        <TextField  label='Email' type="email" name="email" />
       </label>
       <label className={css.label}>
-        Password
-        <input type="password" name="password" />
+
+        <TextField  label='Password' type="password" name="password" />
       </label>
       <button type="submit">Log In</button>
     </form>
+    </Container>
   )
 }
