@@ -4,7 +4,7 @@ import { LoginPage } from '../pages/LoginPage';
 
 import { RegisterPage } from '../pages/RegisterPage';
 import { Layout } from './Layout';
-import ContactsPage from '../pages/ContactsPage';
+import {ContactsPage} from '../pages/ContactsPage';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { useEffect } from 'react';

@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage'
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist/es/constants';
 import { authReducer } from './auth/slice';
 import { contactsReducer } from './contacts/slice';
+import { filterReducer } from './contacts/slicefilter';
 
 
 
@@ -17,6 +18,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
+    filter: filterReducer,
   },
 
   middleware: getDefaultMiddleware =>
