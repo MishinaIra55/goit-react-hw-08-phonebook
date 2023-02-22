@@ -1,3 +1,4 @@
+import {  useMemo } from 'react';
 import {  useSelector } from 'react-redux';
 import { selectAllContacts, selectFilter } from '../../redux/contacts/selectors';
 import { ContactItem } from '../ContactItem/ContactItem';
@@ -9,23 +10,20 @@ export const ContactList = () => {
   const filter = useSelector(selectFilter);
 
 
-  const getFilteredList = () => {
-
-    if (filter === '') {
-
+  const filteredList = useMemo(() => {
+    if (!filter) {
       return contacts;
-
     } else {
       const normalizeFilter = filter.toLowerCase();
-      // console.log(contacts)
-      return contacts.filter(item => item.name.toLowerCase().includes(normalizeFilter));
+
+      return contacts.filter(item => item.name?.toLowerCase()?.includes(normalizeFilter));
     }
-  };
+  }, [filter, contacts]);
 
   return (
 
     <ul>
-      {getFilteredList() && getFilteredList().map(item => (
+      {Boolean(filteredList.length) && filteredList.map(item => (
 
         <ContactItem key={item.id} contact={item} />
       ))}
