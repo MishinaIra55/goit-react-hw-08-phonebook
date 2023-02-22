@@ -1,7 +1,7 @@
 import css  from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
-import { Container, TextField } from '@mui/material';
+import { Button, Container, TextField } from '@mui/material';
 
 export const LoginForm = () => {
 const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const dispatch = useDispatch();
 
         <TextField  label='Password' type="password" name="password" />
       </label>
-      <button type="submit">Log In</button>
+      <Button variant="outlined" color="primary" type="submit">Log In</Button>
     </form>
     </Container>
   )

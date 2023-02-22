@@ -1,7 +1,7 @@
 import  css  from './RegisterForm.module.css';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
-import { Container, TextField } from '@mui/material';
+import { Button, Container, TextField } from '@mui/material';
 
 export const RegisterForm =()=> {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ export const RegisterForm =()=> {
 
         <TextField label="Password" type="password" name="password" />
       </label>
-      <button type="submit">Register</button>
+      <Button  variant="outlined" color="primary" type="submit">Register</Button>
     </form>
     </Container>
   )

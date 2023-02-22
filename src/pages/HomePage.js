@@ -12,7 +12,6 @@ const styles = {
   },
 };
 
-
 export const HomePage =() => {
   return(
     <div style={styles.container}>
