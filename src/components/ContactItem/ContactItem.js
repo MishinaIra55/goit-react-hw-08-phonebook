@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
 import PropTypes from 'prop-types';
 import { Container, IconButton, List, ListItemText } from '@mui/material';
-import css from './ContactItem.module.css';
+
 
 export const ContactItem = ( { contact: { id, name, number } } ) => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export const ContactItem = ( { contact: { id, name, number } } ) => {
 
   return (
     <Container>
-    <List component="nav" className={css.list }>
+    <List component="nav" >
       <ListItemText >{name}</ListItemText >
       <ListItemText >{number}</ListItemText >
       <IconButton aria-label="delete"  type='button' onClick={ handleDelete}>Delete

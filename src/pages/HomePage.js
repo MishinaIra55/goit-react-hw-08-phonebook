@@ -1,3 +1,5 @@
+import addressBook from '../images/addressBook.png';
+
 const styles = {
   container: {
     minHeight: 'calc(100vh - 50px)',
@@ -15,12 +17,7 @@ const styles = {
 export const HomePage =() => {
   return(
     <div style={styles.container}>
-      <h1 style={styles.title}>
-        Contact manager welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </h1>
-    </div>
+      <img src= {addressBook} alt="address book" width="100%" height="550"/>
+     </div>
   )
 }
