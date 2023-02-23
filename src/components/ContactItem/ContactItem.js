@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
 import PropTypes from 'prop-types';
-import { Container, IconButton, List, ListItemText } from '@mui/material';
+import { Button, Container,  List, ListItemText } from '@mui/material';
 
 
 export const ContactItem = ( { contact: { id, name, number } } ) => {
@@ -10,12 +10,14 @@ export const ContactItem = ( { contact: { id, name, number } } ) => {
   const handleDelete = () => dispatch(deleteContact(id))
 
   return (
+
     <Container>
+      <h4>Her`s your contact book</h4>
     <List component="nav" >
       <ListItemText >{name}</ListItemText >
       <ListItemText >{number}</ListItemText >
-      <IconButton aria-label="delete"  type='button' onClick={ handleDelete}>Delete
-      </IconButton>
+      <Button   variant="contained" type='button' onClick={ handleDelete}>Delete
+      </Button>
     </List >
     </Container>
   )

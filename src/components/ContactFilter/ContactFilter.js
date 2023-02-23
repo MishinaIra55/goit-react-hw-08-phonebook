@@ -20,7 +20,7 @@ export const ContactFilter = () => {
 
       <TextField
         label="Find contacts by name"
-        variant='outlined'
+        variant="standard"
         className={styles.filter}
         type='name'
         value={filter}
