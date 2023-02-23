@@ -12,10 +12,10 @@ export const ContactList = () => {
 
   const filteredList = useMemo(() => {
     if (!filter) {
-      console.log('1');
+
       return contacts;
     } else {
-      console.log('2');
+
       const normalizeFilter = filter.toLowerCase();
 
       return contacts.filter(item => item.name?.toLowerCase()?.includes(normalizeFilter));
