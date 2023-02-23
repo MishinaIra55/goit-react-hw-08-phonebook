@@ -1,4 +1,5 @@
 import addressBook from '../images/addressBook.png';
+import { Container } from '@mui/material';
 
 const styles = {
   container: {
@@ -16,8 +17,11 @@ const styles = {
 
 export const HomePage =() => {
   return(
-    <div style={styles.container}>
-      <img src= {addressBook} alt="address book" width="100%" height="550"/>
-     </div>
+    <Container>
+      <div style={styles.container}>
+        <img src= {addressBook} alt="address book" width="100%" height="100%"/>
+      </div>
+    </Container>
+
   )
 }
